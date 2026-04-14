@@ -1,0 +1,10 @@
+{
+  "name": "42-lite-orthodox-generator",
+  "displayName": "C++ Header/Source Generator",
+  "description": "Auto-generates paired .hpp/.cpp files with C++ class boilerplate",
+  "version": "1.0.0",
+  "engines": { "vscode": ">=1.0.0" },
+  "activationEvents": ["onStartupFinished"],
+  "main": "./extension.js",
+  "contributes": {}
+}
