@@ -64,6 +64,11 @@ function activate(context) {
     const dir = path.dirname(filePath);
 
     try {
+      const isUpperCase = /^[A-Z]/.test(name);
+
+      if (!isUpperCase)
+        return ;
+
       if (ext === '.hpp') {
         const size = fs.statSync(filePath).size;
         if (size === 0)
