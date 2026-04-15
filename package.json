@@ -1,10 +1,20 @@
 {
   "name": "42-lite-orthodox-generator",
-  "displayName": "C++ Header/Source Generator",
+  "displayName": "42-lite-orthodox-generator",
   "description": "Auto-generates paired .hpp/.cpp files with C++ class boilerplate",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "engines": { "vscode": ">=1.0.0" },
   "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
-  "contributes": {}
+  "contributes": {},
+  "publisher": "saan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/UGI1621/42-Lite-Orthodox-Generator"
+  },
+  "homepage": "https://github.com/UGI1621/42-Lite-Orthodox-Generator",
+  "bugs": {
+    "url": "https://github.com/UGI1621/42-Lite-Orthodox-Generator/issues"
+  },
+  "license" : "MIT"
 }
