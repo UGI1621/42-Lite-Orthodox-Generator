@@ -69,15 +69,19 @@ function activate(context) {
       if (!isUpperCase)
         return ;
 
+      const size = fs.statSync(filePath).size;
+
+      // Only generate boilerplate and companion file when the triggering file
+      // is empty. A non-empty file means it was dragged, copied, or pasted
+      // from another location — in that case we leave everything alone.
+      if (size !== 0)
+        return ;
+
       if (ext === '.hpp') {
-        const size = fs.statSync(filePath).size;
-        if (size === 0)
-          fs.writeFileSync(filePath, getHppContent(name), 'utf8');
+        fs.writeFileSync(filePath, getHppContent(name), 'utf8');
         createIfNotExists(path.join(dir, `${name}.cpp`), getCppContent(name));
       } else if (ext === '.cpp') {
-        const size = fs.statSync(filePath).size;
-        if (size === 0)
-          fs.writeFileSync(filePath, getCppContent(name), 'utf8');
+        fs.writeFileSync(filePath, getCppContent(name), 'utf8');
         createIfNotExists(path.join(dir, `${name}.hpp`), getHppContent(name));
       }
     } catch (e) {
